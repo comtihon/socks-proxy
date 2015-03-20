@@ -1,0 +1,23 @@
+{application, socks_proxy, [
+  {description, ""},
+  {vsn, "0.1.0"},
+  {id, "git"},
+  {modules, []},
+  {registered, []},
+  {applications, [
+    kernel,
+    stdlib,
+    lager,
+    ranch
+  ]},
+  {mod, {socks_proxy_app, []}},
+  {env,
+    [
+      {tcp_pool,
+        [
+          {port, 4232},
+          {listeners, 10}
+        ]
+      }
+    ]}
+]}.
